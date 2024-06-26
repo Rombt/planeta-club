@@ -19,7 +19,7 @@
                </div>
                <footer>
                   <a href="#">
-                     read more
+                     <!-- read more -->
                      <svg>
                         <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/icons/sprite.svg#"></use>
                      </svg>
