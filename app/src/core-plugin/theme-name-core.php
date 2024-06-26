@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: -core-plugin
+Plugin Name:  planeta-club-core-plugin
 Plugin URI: #
 Description:  
 Version: 1.0
@@ -50,8 +50,8 @@ function rmbt_get_images_sizes() {
 			),
 			array(
 				'name' => 'rmbt_header-img',
-				'width' => 1970,
-				'height' => 250,
+				'width' => 260,
+				'height' => 75,
 				'crop' => true,
 			),
 		)

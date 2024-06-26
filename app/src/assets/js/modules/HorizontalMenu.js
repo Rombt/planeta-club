@@ -1,3 +1,35 @@
+/* 
+    Обеспечивает основной функционал горизонтального меню для всех меню на странице
+        базовые стили в файле horizontalMenu.less
+
+        этим классом обрабатываются ТОЛЬКО теги nav с классами указанными в param.containersMenu
+        при переполнении контейнера пункты меню которые не поместились скрываются в меню overflow
+
+        click, нажатия клавиши esc прослушиваются на всей странице 
+
+        по умолчанию выпадающие меню всех типов изначально создаются с внешним видом открытого состояния 
+            и скрываются классом rmbt-hidden 
+            для отрытия-активации меню класс rmbt-hidden удаляется 
+        такое повидение можно изменить:
+            при открытии-активации меню любого типа ему добавляется класс rmbt-visible с соответствующим модификатором
+            это даёт возможность организовать разные способы открытия для разных пипо меню
+
+
+
+    todo:
+
+        исключить возможность открытия меню за пределы окна 
+
+        добавить возможность устанавливать для каждого меню свой набор иконок, селекторами элементов которые уже прописаны в html
+
+        добавить все те манипуляции из dropprocessingClick() блокировка body и прочее
+        
+        возможность отключать icon - dropdown для меню desk top независимо от мобильной версии из html
+        overflow-cont  додлжен выезжать из за правой границы окна
+
+
+    */
+
 class HorizontalMenu {
   /*
           const param = {
@@ -17,20 +49,21 @@ class HorizontalMenu {
               iconOverflow: '.icon-overflow', // определяет внешний вид иконки overflow menu
               iconOverflowOpen: '.icon-overflow_open', // определяет внешний вид иконки overflow menu когда overflow menu открыто
               
-              iconBurger: 'icon-drop', // определяет внешний вид иконки Burger menu
+              iconBurger: 'icon-drop', // определяет внешний вид иконки Burgerr menu
               iconBurgerOpen: 'icon-drop_open', // определяет внешний вид иконки Burgerr menu когда Burgerr menu открыто  iconBurger НЕбудет удалён
 
               breakPointBurger: 768,      // размер окна при котором происходит перестроения в burger меню из overflow меню
               
-              single: 'false', // допускает одновременное открытие нескольких меню т.е. открытие следующего меню не закрывает предидущее
+              // single: 'false', // допускает одновременное открытие нескольких меню т.е. открытие следующего меню не закрывает предидущее
 
-              contAdditionalClasses: { // пользовательские классы определяющие внешний вид открытых пунктов меню или контейнеров
+              contAdditionalClasses: { // пользаватеьские классы определяющие внешний вид открытых пунтков меню или контейнеров
                   drop: [],
                   overflow: [],
                   burger: [],
               }, 
 
               animation = {     // для каждого вида меню ожидается объект содержащий все свойства/значения, которые вы хотите анимировать для открытия и закрытия отдельно!
+                              // соответствующий объект будет использован в методе gsap.to(). 
                  drop:{
                      open{},
                      close{}
@@ -49,21 +82,21 @@ class HorizontalMenu {
 
       */
 
-  // классы скрытых пунктов меню или контейнеров
+  // классы скрытых пунтков меню или контейнеров
   hiddenMenuCont = {
     overflow: 'overflow-cont',
     drop: 'drop-cont',
     burger: 'burger-cont',
   };
 
-  // объект, модификаторы классов для того что бы каждый вид меню мог открываться - закрываться по своему
+  // объект, модификаторы классов для того что бы каждый вид меню мог открываться - закрываться посвоему
   modifiers = {
     drop: 'drop',
     overflow: 'overflow',
     burger: 'burger',
   };
 
-  // пользовательские классы определяющие внешний вид открытых пунктов меню или контейнеров
+  // пользаватеьские классы определяющие внешний вид открытых пунтков меню или контейнеров
   contAdditionalClasses = {
     drop: [],
     overflow: [],
@@ -140,19 +173,17 @@ class HorizontalMenu {
     this.iconOverflow = this._clearClassName(param.iconOverflow || 'icon-overflow');
     this.iconBurger = this._clearClassName(param.iconBurger || 'icon-burger');
     this.iconBurgerOpen = this._clearClassName(
-      param.iconBurgerOpen || 'icon-burger_open'
+      param.iconBurgerOpen || 'icon-burger_open',
     );
     this.iconDropClass = this._clearClassName(param.iconDropClass || 'icon-drop');
     this.iconDropClassOpen = this._clearClassName(
-      param.iconDropdownmodifiereOpen || 'icon-drop_open'
+      param.iconDropdownmodifiereOpen || 'icon-drop_open',
     );
     this.breakPointBurger = param.breakPointBurger || 767;
 
     this.visibleClass = this._clearClassName(param.visibleClass || 'rmbt-visible');
     this.hiddenClass = this._clearClassName(param.hiddenClass || 'rmbt-hidden');
     this.single = param.single || 'true';
-
-    this.initAnimation(param.animation)
 
     this.lastWidthWindow = window.innerWidth;
 
@@ -176,30 +207,18 @@ class HorizontalMenu {
     });
   }
 
+  // мenuВuilding(contCurrentMenu) {
+  //     /*
+  //         строит меню при загрузке страницы
+  //         перестраивает меню при resize окна
+  //             перемещая li из menuOverflow в ul основного меню
+  //             для того что бы в burger menu отображались все li
 
-  initAnimation(animation) {
+  //         получает
 
-    for (const prop in animation) {
-      if (animation.hasOwnProperty(prop) && animation[prop] !== null) {
-        const subProp = animation[prop];
-        for (const subProp in animation[prop]) {
-          if (animation[prop].hasOwnProperty(subProp) && animation[prop][subProp] !== null) {
-            // console.log(`Анимация ${prop} ${subProp} запущена!`);
+  //     */
 
-            this.animation[prop][subProp] = animation[prop][subProp];
-
-
-          }
-        }
-      }
-    }
-
-    console.log("this.animation = ", this.animation);
-  }
-
-
-
-
+  // }
 
   clearNav(contCurrentMenu) {
     if (
@@ -278,7 +297,7 @@ class HorizontalMenu {
         this.changeStateIconMenu(
           contCurrentMenu.querySelector('nav'),
           this.modifiers.burger,
-          'close'
+          'close',
         );
       }
 
@@ -359,7 +378,7 @@ class HorizontalMenu {
   }
 
   /* 
-          search sub menu and set sub menu icon if find
+          search sub menu and set sub menu icon if finde
       */
   setSubMenuIcon(contCurrentMenu) {
     const itemsMenu = contCurrentMenu.querySelectorAll(`nav li`);
@@ -409,7 +428,7 @@ class HorizontalMenu {
                 return;
               }
             }
-          } catch { }
+          } catch {}
         });
         break;
 
@@ -541,7 +560,7 @@ class HorizontalMenu {
         this.closeMenu(currentMenu);
       } else if (target.classList.contains(this.iconBurgerOpen)) {
         let currentMenu = target.closest(
-          `.${this.visibleClass}_${this.modifiers.burger}`
+          `.${this.visibleClass}_${this.modifiers.burger}`,
         );
         this.closeMenu(currentMenu);
       } else if (target.classList.contains(this.iconDropClass)) {
@@ -603,7 +622,7 @@ class HorizontalMenu {
           .map(el => {
             if (typeof str === 'string') this._clearClassName(el);
           })
-          .filter(item => item !== undefined)
+          .filter(item => item !== undefined),
       ),
     ];
   }
@@ -659,32 +678,18 @@ class HorizontalMenu {
 }
 
 const param = {
-  containersMenu: ['.cont-horizont-menu', '.wrap-drop-menu', '#my-menu'],
+  containersMenu: ['.cont-horizont-menu'],
+  breakPointBurger: 1024,
   contAdditionalClasses: {
     drop: [],
     overflow: [],
     burger: [],
   },
-  animation: {
-    drop: {
-      open: {
-      },
-      close: {
-      },
-    },
-    overflow: {
-      open: {
-      },
-      close: {
-      },
-    },
-    burger: {
-      open: {
-      },
-      close: {
-      },
-    },
-  },
+  // animation: {
+  //     drop: {},
+  //     overflow: {},
+  //     burger: {},
+  // }
 };
 
 const menu = new HorizontalMenu(param);

@@ -72,57 +72,34 @@
             </nav>
          </div>
          <div class="rmbt-full-width rmbt-header-bottom">
-            <div class="rmbt-container rmbt-header-bottom-container">
+            <?php if (has_custom_logo()) : ?>
+            <div class="wrap-img">
+               <?php the_custom_logo(); ?>
+            </div>
+            <?php endif ?>
+            <div class="rmbt-container rmbt-header-bottom__container">
                <div class="rmbt-header-bottom__row">
                   <div class="rmbt-header-bottom__col">
+
+                     <?php if (has_nav_menu('header_nav')) { ?>
+                     <div class="cont-horizont-menu">
+
+                        <?php wp_nav_menu(
+								array(
+									'theme_location' => 'header_nav',
+									'container' => 'nav',
+								)
+							);?>
+                     </div>
+                     <?php } ?>
+
+
                   </div>
                </div>
             </div>
+            <?php get_template_part('searchform'); ?>
          </div>
+
+
 
       </header>
-
-
-
-      <!-- <div class="wrapper-section">
-         <div class="rmbt-full-width rmbt-header-full-width">
-            <div class="rmbt-header-top-line">
-               <div class="rmbt-header-top-line__col-left">
-                  <?php echo rmbt_redux_field_to_ul('rmbt-manager-1-phone', 'tel', '', ','); ?>
-                  <?php echo rmbt_redux_field_to_ul('rmbt-manager-2-phone'); ?>
-               </div>
-               <div class="rmbt-header-top-line__col-right">
-                  <?php echo rmbt_get_redux_field('rmbt-address-1'); ?>
-                  <?php echo rmbt_get_redux_field('rmbt-address-2'); ?>
-               </div>
-               <nav class="language language__menu">
-                  <ul id="menu-mova-ua" class="menu">
-                     <li id="menu-item-28476" class="">
-                        <a href="#">UA</a>
-                     </li>
-                     <li id="menu-item-28476-ru" class="">
-                        <a href="#">RU</a>
-                     </li>
-                  </ul>
-               </nav>
-            </div>
-            <header class="rmbt-container rmbt-header">
-
-               <div class="rmbt-header__row rmbt-bottom-line">
-                  <div class="rmbt-bottom-line__col-nav">
-                  </div>
-               </div>
-            </header>
-         </div>
-      </div> -->
-
-
-
-
-
-
-      <?php
-		// для стандартного WP виджета поиск файл searchform.php должен находится в корне темы
-		// для работоспособности поиска в целом searchform.php может быть где угодно
-		get_template_part('searchform');
-		?>
