@@ -8,6 +8,9 @@
          <section class="rmbt-container rmbt-footer">
             <div class="rmbt-footer__row">
                <div class="rmbt-footer__col rmbt-footer-contacts">
+                  <div class="rmbt-footer-contacts__body">
+
+                  </div>
                   <?php get_template_part('template-parts/components/social_networks'); ?>
                </div>
                <div class="rmbt-footer__col rmbt-footer-services">

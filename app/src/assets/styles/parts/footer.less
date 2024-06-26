@@ -12,8 +12,6 @@ main {
 .rmbt-full-width {
 }
 .rmbt-footer-full-width {
-  display: flex;
-  flex-direction: column;
   .wrap-img {
     margin: 40px 0px 0px 40px;
 
@@ -23,22 +21,28 @@ main {
 }
 
 .rmbt-footer {
-  height: 700px;
-  flex-grow: 1;
+  height: 550px;
 
   position: relative;
   &__row {
     .row-flex();
-    justify-content: space-around;
-    padding-top: 140px;
+    // justify-content: space-around;
+    // padding-top: 140px;
   }
   &__col {
     .col();
     .size(3);
+    height: 415px;
   }
 }
 .rmbt-footer-contacts {
   border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+
+  &__body {
+    flex-grow: 1;
+  }
 }
 .rmbt-footer-services {
   border: 1px solid #fff;
@@ -53,5 +57,6 @@ main {
   padding-top: 10px;
   padding-bottom: 5px;
   color: #fff;
-  margin: 0 auto;
+  // margin: 0 auto;
+  text-align: center;
 }
