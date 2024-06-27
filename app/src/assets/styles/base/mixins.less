@@ -1,4 +1,4 @@
-// Адаптивное CSS свойство источник
+// Адаптивное CSS свойство
 .adaptive-prop(@property, @max_val, @min_val) {
   @addSize: @max_val - @min_val;
   @maxWidth: @_width_main-wrapper - @_width_min_viewport;
@@ -6,5 +6,18 @@
 
   @media (min-width: ~'@{_width_main-wrapper}px') {
     @{property}: ~'@{max_val}px';
+  }
+}
+
+// Адаптивное CSS свойство безразмерное
+// не работает !!
+// необходимо из конечного результата удалить единицы измерения vw из конечного  результата
+.adaptive-prop-without-sizes (@property, @max_val, @min_val) {
+  @addSize: @max_val - @min_val;
+  @maxWidth: @_width_main-wrapper - @_width_min_viewport;
+  @{property}: ~'calc(@{min_val} + @{addSize} * ((100vw - @{_width_min_viewport})/@{maxWidth}))';
+
+  @media (min-width: ~'@{_width_main-wrapper}') {
+    @{property}: ~'@{max_val}';
   }
 }
