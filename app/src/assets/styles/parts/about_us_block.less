@@ -1,0 +1,45 @@
+.rmbt-about-us-block-full-width {
+}
+
+.rmbt-about-us-block {
+  h2 {
+    text-align: center;
+  }
+  &__row {
+    .row-flex();
+    row-gap: 10px;
+  }
+  &__col {
+    .col();
+
+    border-radius: 20px;
+    padding: 10px;
+  }
+  &__text {
+  }
+
+  .rmbt-about-us-block-green {
+    flex-basis: 48%;
+    margin-right: 0px;
+    border: 3px solid #38c236;
+    background: linear-gradient(180deg, #7cfa7adb 19%, rgba(255, 255, 255, 1) 100%);
+  }
+
+  .rmbt-about-us-block-blue {
+    flex-basis: 48%;
+    margin-right: 0px;
+
+    border: 3px solid #2763ff;
+    background: linear-gradient(180deg, #8bacffcf 0%, rgba(255, 255, 255, 1) 100%);
+  }
+
+  .rmbt-about-us-block-gray {
+    flex-grow: 1;
+    border: 3px solid #7a7a7a;
+
+    p:last-child {
+      text-align: center;
+      font-weight: 800;
+    }
+  }
+}
