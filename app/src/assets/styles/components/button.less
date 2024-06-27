@@ -21,6 +21,20 @@
 
   position: relative;
   z-index: 1;
+
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0px;
+    &:hover {
+      transform: scale(1.07) !important;
+      transition: all 0.3s;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.1) !important;
+    transition: all 0.3s;
+  }
 }
 
 .button_contacts {
