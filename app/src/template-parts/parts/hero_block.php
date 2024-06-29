@@ -18,7 +18,11 @@
                         </svg>
                      </span> форматі
                   </div>
-                  <div class="rmbt-hero-block__buttons"></div>
+                  <div class="rmbt-hero-block__buttons">
+                     <?php  get_template_part('template-parts/components/button',null, ['href'=>'#','title'=>'Контакти','specifier'=>'contacts']); ?>
+                     <?php  get_template_part('template-parts/components/button',null, ['href'=>'#','title'=>'Всі ціни','specifier'=>'prices']); ?>
+                     <?php  get_template_part('template-parts/components/button',null, ['href'=>'#','title'=>'Реєструйтесь на заняття','specifier'=>'registration']); ?>
+                  </div>
                </div>
                <div class="rmbt-hero-block__img">
                   <div class="wrap-img">
@@ -26,9 +30,6 @@
                         alt="main image">
                   </div>
                </div>
-               <?php  get_template_part('template-parts/components/button',null, ['href'=>'#','title'=>'Контакти','specifier'=>'contacts']); ?>
-               <?php  get_template_part('template-parts/components/button',null, ['href'=>'#','title'=>'Всі ціни','specifier'=>'prices']); ?>
-               <?php  get_template_part('template-parts/components/button',null, ['href'=>'#','title'=>'Реєструйтесь на заняття','specifier'=>'registration']); ?>
             </div>
          </div>
       </section>
