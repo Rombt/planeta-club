@@ -167,7 +167,7 @@ class HorizontalMenu {
   constructor(param) {
     this.containersMenu = param.containersMenu || '.cont-horizont-menu';
     this.nl_containersMenu = this._getArrNodeLists(this.containersMenu);
-    if (this.nl_containersMenu.length === null)
+    if (this.nl_containersMenu.length == 0)
       throw new Error('Menus with given selectors  are absent on this page');
     this.contAdditionalClasses = param.contAdditionalClasses;
     this.iconOverflow = this._clearClassName(param.iconOverflow || 'icon-overflow');
@@ -193,32 +193,19 @@ class HorizontalMenu {
   }
 
   forEachMenu() {
-    this.nl_containersMenu.forEach(arrNodeList => {
+    for (let index = 0; index < this.nl_containersMenu.length; index++) {
+      const arrNodeList = this.nl_containersMenu[index];
+
       for (let i = 0; i <= arrNodeList.length - 1; i++) {
         let contCurrentMenu = arrNodeList[i];
         if (!contCurrentMenu.querySelector('nav')) continue;
-
         this.monitoringResize(contCurrentMenu);
-
         this.menuContainerDrop(contCurrentMenu);
         this.setSubMenuIcon(contCurrentMenu);
         this.setBurgerIcon(contCurrentMenu);
       }
-    });
+    }
   }
-
-  // мenuВuilding(contCurrentMenu) {
-  //     /*
-  //         строит меню при загрузке страницы
-  //         перестраивает меню при resize окна
-  //             перемещая li из menuOverflow в ul основного меню
-  //             для того что бы в burger menu отображались все li
-
-  //         получает
-
-  //     */
-
-  // }
 
   clearNav(contCurrentMenu) {
     if (
@@ -644,9 +631,15 @@ class HorizontalMenu {
         */
   _getArrNodeLists(date) {
     if (Array.isArray(date)) {
-      return date.map(el => document.querySelectorAll(el));
-    } else {
-      return [document.querySelectorAll(date)];
+      let nl_menus = date
+        .map(el => document.querySelectorAll(el))
+        .filter((menu, index, nodeList) => {
+          if (menu.length > 0) {
+            return menu;
+          }
+        });
+
+      return nl_menus;
     }
   }
 
@@ -678,12 +671,11 @@ class HorizontalMenu {
 }
 
 const param = {
-  containersMenu: ['.cont-horizont-menu'],
-  breakPointBurger: 1024,
+  containersMenu: ['.cont-horizont-menu', '.wrap-drop-menu', '#my-menu'],
   contAdditionalClasses: {
-    drop: [],
-    overflow: [],
-    burger: [],
+    drop: ['add-drop-1', 'add-drop-2', 'add-drop-3'],
+    overflow: ['add-overflow-1', 'add-overflow-2', 'add-overflow-3'],
+    burger: ['add-burger-1', 'add-burger-2', 'add-burger-3'],
   },
   // animation: {
   //     drop: {},

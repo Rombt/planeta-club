@@ -6,6 +6,7 @@
   position: relative;
   border-radius: 0 0 100px 100px;
   background-color: #2763ff;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.6);
 
   font-family: 'exo 2', Sans-serif, Arial;
   .adaptive-prop(font-size, 16, 14);
@@ -79,7 +80,7 @@
     height: 30px;
     border-radius: 7px;
     .adaptive-prop(width, 65, 40);
-    .adaptive-prop(right, 60, -20);
+    .adaptive-prop(right, 70, -20);
 
     .to(1200px,{
       .adaptive-prop(right, 20, 10);
@@ -144,8 +145,8 @@
 
 .rmbt-header-bottom {
   position: relative;
-  padding-left: 50px;
-  padding-right: 270px;
+  padding-left: 35px;
+  padding-right: 310px;
   .to(1024px,{
   padding-right: 0px;
 });
@@ -221,10 +222,11 @@
   }
 
   .wrap-img {
+    box-sizing: border-box;
     flex-shrink: 0;
-    .adaptive-prop(width, 260, 200);
+    .adaptive-prop(width, 221, 180);
     // .adaptive-prop(margin-left, 40, 20);
-    height: 80px;
+    height: 67px;
 
     img {
       object-fit: contain !important;
