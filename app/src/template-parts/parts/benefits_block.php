@@ -10,9 +10,7 @@
                      </use>
                   </svg>
                </div>
-               <header>
-                  <h3>Онлайн школа</h3>
-               </header>
+
                <div class="rmbt-benefits-card__article-body">
                   <div class="rmbt-benefits-card__article-text">
                      У нашому освітньому центрі працюють фахівці з великим досвідом діяльності в сфері освіти. Вони
@@ -28,9 +26,7 @@
                      </use>
                   </svg>
                </div>
-               <header>
-                  <h3>Онлайн школа</h3>
-               </header>
+
                <div class="rmbt-benefits-card__article-body">
                   <div class="rmbt-benefits-card__article-text">
                      У нашому освітньому центрі працюють фахівці з великим досвідом діяльності в сфері освіти. Вони
@@ -46,9 +42,7 @@
                      </use>
                   </svg>
                </div>
-               <header>
-                  <h3>Онлайн школа</h3>
-               </header>
+
                <div class="rmbt-benefits-card__article-body">
                   <div class="rmbt-benefits-card__article-text">
                      У нашому освітньому центрі працюють фахівці з великим досвідом діяльності в сфері освіти. Вони
@@ -64,9 +58,7 @@
                      </use>
                   </svg>
                </div>
-               <header>
-                  <h3>Онлайн школа</h3>
-               </header>
+
                <div class="rmbt-benefits-card__article-body">
                   <div class="rmbt-benefits-card__article-text">
                      У нашому освітньому центрі працюють фахівці з великим досвідом діяльності в сфері освіти. Вони
@@ -82,9 +74,7 @@
                      </use>
                   </svg>
                </div>
-               <header>
-                  <h3>Онлайн школа</h3>
-               </header>
+
                <div class="rmbt-benefits-card__article-body">
                   <div class="rmbt-benefits-card__article-text">
                      У нашому освітньому центрі працюють фахівці з великим досвідом діяльності в сфері освіти. Вони
@@ -100,9 +90,7 @@
                      </use>
                   </svg>
                </div>
-               <header>
-                  <h3>Онлайн школа</h3>
-               </header>
+
                <div class="rmbt-benefits-card__article-body">
                   <div class="rmbt-benefits-card__article-text">
                      У нашому освітньому центрі працюють фахівці з великим досвідом діяльності в сфері освіти. Вони

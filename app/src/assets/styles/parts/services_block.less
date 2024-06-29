@@ -14,16 +14,16 @@
     justify-content: center;
     row-gap: 10px;
     column-gap: 10px;
+
     h2 {
       flex-basis: 100%;
       text-align: center;
       font-size: 28px;
       font-weight: 600;
-
-      &:last-child {
-        margin-top: 90px;
-        margin-top: 90px;
-      }
+      margin-top: 0px;
+    }
+    & > h2:nth-child(8) {
+      margin-top: 70px;
     }
   }
   &__col {
@@ -35,6 +35,7 @@
     text-align: center;
     border-radius: 20px;
     min-width: 300px;
+    overflow: hidden;
 
     footer {
       a {
