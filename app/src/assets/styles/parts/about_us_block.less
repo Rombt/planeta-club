@@ -3,13 +3,22 @@
 
 .rmbt-about-us-block {
   h2 {
+    width: 100%;
     text-align: center;
+    font-size: 32px;
+    font-family: Arial;
+    margin-bottom: 13px;
     margin-top: 0px;
   }
   &__row {
     .row-flex();
     justify-content: center;
     row-gap: 10px;
+    padding-top: 10px;
+
+    box-sizing: border-box;
+    width: 1300px;
+    margin: 0 auto;
   }
   &__col {
     .col();
@@ -19,6 +28,7 @@
     min-width: 300px;
   }
   &__text {
+    line-height: 24px;
   }
 
   .rmbt-about-us-block-green {
@@ -37,7 +47,8 @@
   }
 
   .rmbt-about-us-block-gray {
-    flex-grow: 1;
+    // flex-grow: 1;
+    flex-basis: 97%;
     border: 3px solid #7a7a7a;
 
     p:last-child {
