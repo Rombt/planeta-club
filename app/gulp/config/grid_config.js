@@ -1,7 +1,7 @@
 export const settings = {
   outputStyle: 'less',
   columns: 12,
-  offset: '30px',
+  offset: '15px',
   //mobileFirst: true,
   container: {
     maxWidth: '1350px',
