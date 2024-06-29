@@ -1,0 +1,1 @@
+<h2 class="<?php echo $args['class'] ?>"><?php echo $args['title'] ?></h2>

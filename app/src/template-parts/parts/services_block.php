@@ -1,6 +1,6 @@
 <div class="wrapper-section rmbt-service-wrapper-section">
    <div class="rmbt-full-width rmbt-service-full-width">
-      <h2>Наші послуги</h2>
+      <?php get_template_part('template-parts/components/title', null, ['title'=>'Наші послуги','class'=>'title-section']); ?>
       <section class="rmbt-container rmbt-service">
          <div class="rmbt-service__row">
             <h2>Онлайн</h2>

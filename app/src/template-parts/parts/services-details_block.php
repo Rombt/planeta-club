@@ -1,7 +1,7 @@
 <div class="wrapper-section">
    <div class="rmbt-full-width rmbt-services-details-block-full-width">
       <section class="rmbt-container rmbt-services-details-block">
-         <h2>Трохи докладніше про наші послуги</h2>
+         <?php get_template_part('template-parts/components/title', null, ['title'=>'Трохи докладніше про наші послуги','class'=>'title-section']); ?>
          <div class="rmbt-services-details-block__row">
             <details class="rmbt-services-details-block__col">
                <summary>

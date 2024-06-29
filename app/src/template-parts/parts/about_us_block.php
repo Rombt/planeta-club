@@ -1,7 +1,7 @@
 <div class="wrapper-section">
    <div class="rmbt-full-width rmbt-about-us-block-full-width">
       <section class="rmbt-container rmbt-about-us-block">
-         <h2>Подробиці про Planetaclub. Чому ми?</h2>
+         <?php get_template_part('template-parts/components/title', null, ['title'=>'Подробиці про Planetaclub. Чому ми?','class'=>'title-section']); ?>
          <div class="rmbt-about-us-block__row">
             <div class="rmbt-about-us-block__col rmbt-about-us-block-green">
                <div class="rmbt-about-us-block__text">

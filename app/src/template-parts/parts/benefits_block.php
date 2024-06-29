@@ -2,7 +2,7 @@
    <div class="rmbt-full-width rmbt-benefits-full-width">
       <section class="rmbt-container rmbt-benefits">
          <div class="rmbt-benefits__row">
-            <h2>Головні переваги навчального центру Planetaclub</h2>
+            <?php get_template_part('template-parts/components/title', null, ['title'=>'Головні переваги навчального центру Planetaclub','class'=>'title-section']); ?>
             <article class="rmbt-benefits__col rmbt-benefits-card">
                <div class="wrap-img rmbt-benefits-card__img">
                   <svg>
