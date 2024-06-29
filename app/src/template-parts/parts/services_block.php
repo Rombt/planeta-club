@@ -1,4 +1,4 @@
-<div class="wrapper-section">
+<div class="wrapper-section rmbt-service-wrapper-section">
    <div class="rmbt-full-width rmbt-service-full-width">
       <h2>Наші послуги</h2>
       <section class="rmbt-container rmbt-service">
