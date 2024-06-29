@@ -1,4 +1,4 @@
-<div class="wrapper-section">
+<div class="wrapper-section rmbt-hero-block-wrapper-section">
    <div class="rmbt-full-width rmbt-hero-block-full-width">
       <section class="rmbt-container rmbt-hero-block">
          <div class="rmbt-hero-block__row">
