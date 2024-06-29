@@ -7,11 +7,19 @@ import './modules/arrowsInputNumberStyle.js';
 import './modules/HorizontalMenu.js';
 // import './modules/sliders.js';
 
+// const mainHeader = document.querySelector('.main-header');
+// const mainHeaderHeigh = mainHeader.clientHeight;
+// console.log('mainHeaderHeigh = ', mainHeaderHeigh);
 
-// let tl = gsap.timeline();
+// if (mainHeader) {
+//   window.addEventListener('scroll', () => {
+//     const scrollPosition = window.scrollY;
+//      const widthViewport = document.documentElement.clientWidth;
 
+//      if (1160 < widthViewport) {
 
-// tl.to('.test-box__green', { duration: 2, x: 800, ease: 'elastic' });
-// tl.to('.test-box__green', { duration: 2, y: 200, ease: 'elastic' });
-// tl.to('.test-box__green', { duration: 2, x: 0, ease: 'elastic' });
-// tl.to('.test-box__green', { duration: 2, y: 0, ease: 'elastic' });
+//      }
+
+//     mainHeader.style.top = scrollPosition + 'px';
+//   });
+// }

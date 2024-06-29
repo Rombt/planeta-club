@@ -1,5 +1,10 @@
 .rmbt-hero-block-wrapper-section {
   margin-top: 130px;
+  .adaptive-prop(margin-top, 130, 160);
+
+  .to(1060px,{
+  margin-top: 0px
+  });
 }
 
 .rmbt-hero-block-full-width {
@@ -36,6 +41,10 @@
     stroke-width: 2px;
     -webkit-text-stroke-color: #38c236;
     stroke: #38c236;
+
+    .to(1060px,{
+      background-color: #eaeaea;
+    });
   }
   &__subtitle {
     height: 52px;
@@ -86,12 +95,12 @@
     }
   }
   &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 10px;
     .to(630px,{
-       display: flex;
-       flex-wrap: wrap;
-       align-items: center;
-       justify-content: center;
-       row-gap: 10px
+      justify-content: center;
       });
   }
   &__img {
