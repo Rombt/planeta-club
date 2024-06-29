@@ -671,11 +671,11 @@ class HorizontalMenu {
 }
 
 const param = {
-  containersMenu: ['.cont-horizont-menu', '.wrap-drop-menu', '#my-menu'],
+  containersMenu: ['.cont-horizont-menu'],
   contAdditionalClasses: {
-    drop: ['add-drop-1', 'add-drop-2', 'add-drop-3'],
-    overflow: ['add-overflow-1', 'add-overflow-2', 'add-overflow-3'],
-    burger: ['add-burger-1', 'add-burger-2', 'add-burger-3'],
+    drop: [],
+    overflow: [],
+    burger: [],
   },
   // animation: {
   //     drop: {},
