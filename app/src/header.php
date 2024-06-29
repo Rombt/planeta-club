@@ -15,9 +15,6 @@
    <?php   get_template_part('template-parts/components/debug-grid'); ?>
 
    <div class="rmbt-page-wrap">
-
-
-
       <header class="main-header">
          <div class="rmbt-full-width rmbt-header-top">
             <div class="rmbt-container rmbt-header-top__container">

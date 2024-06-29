@@ -1,6 +1,6 @@
-// .rmbt-hero-block-wrapper-section {
-//   margin-top: -@margin_bottom_section;
-// }
+.rmbt-hero-block-wrapper-section {
+  margin-top: 130px;
+}
 
 .rmbt-hero-block-full-width {
 }
@@ -17,7 +17,7 @@
     position: relative;
   }
   &__text {
-    .adaptive-prop(height, 440, 300);
+    // .adaptive-prop(height, 440, 300);
 
     position: relative;
     z-index: 1;
@@ -86,6 +86,13 @@
     }
   }
   &__buttons {
+    .to(630px,{
+       display: flex;
+       flex-wrap: wrap;
+       align-items: center;
+       justify-content: center;
+       row-gap: 10px
+      });
   }
   &__img {
     position: absolute;
@@ -115,7 +122,6 @@
 
     .to(768px,{
         width: 100%;
-        height: 100%;
 
       &::after{
         background-color: rgba(234, 234, 234,0.6);
